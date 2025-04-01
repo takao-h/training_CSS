@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f5f7;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* サイドバーのスタイル */
+.sidebar {
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-right: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.store-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.store-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.store-details h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.store-details p {
+    font-size: 12px;
+    color: #666;
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav li {
+    margin-bottom: 10px;
+}
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 6px;
+}
+
+.main-nav li.active a {
+    background-color: #f0f0f5;
+    color: #333;
+}
+
+.main-nav .material-icons {
+    font-size: 20px;
+}
+
+/* メインコンテンツのスタイル */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    gap: 10px;
+    width: 300px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.search-bar button {
+    background-color: #f0f0f5;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-type {
+    color: #666;
+    font-size: 14px;
+}
+
+/* アナリティクスコンテンツのスタイル */
+.analytics-content .header {
+    margin-bottom: 30px;
+}
+
+.analytics-content h1 {
+    margin-bottom: 10px;
+}
+
+.analytics-content .header p {
+    color: #666;
+}
+
+.analytics-content .header a {
+    color: #007AFF;
+    text-decoration: none;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat-change {
+    font-size: 14px;
+}
+
+.stat-change.positive {
+    color: #34C759;
+}
+
+.stat-change.negative {
+    color: #FF3B30;
+}
