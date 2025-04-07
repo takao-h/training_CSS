@@ -173,6 +173,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     border-top: 1px solid #eee;
     overflow: hidden;
+    min-height: 200px;
 }
 
 .stat-header {
@@ -189,7 +190,7 @@ body {
 .stat-content {
     display: flex;
     flex-direction: column;
-    height: 90px;
+    height: 140px;
 }
 
 .stat-info {
@@ -228,7 +229,7 @@ body {
 
 .stat-graph {
     margin-top: auto;
-    height: 40px;
+    height: 60px;
     width: 100%;
 }
 
