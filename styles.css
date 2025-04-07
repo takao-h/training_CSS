@@ -168,25 +168,54 @@ body {
 
 .stat-card {
     background-color: white;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-top: 1px solid #eee;
+    overflow: hidden;
 }
 
-.stat-card h3 {
-    font-size: 14px;
+.stat-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f5f5f7;
+}
+
+.stat-header h3 {
+    font-size: 15px;
     color: #666;
-    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+}
+
+.stat-info {
+    padding-top: 15px;
 }
 
 .stat-value {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.stat-value .main-value {
+    font-weight: bold;
+}
+
+.stat-value .decimal {
+    font-weight: normal;
+    color: #999;
+    font-size: 0.8em;
 }
 
 .stat-change {
-    font-size: 14px;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .stat-change.positive {
@@ -195,4 +224,33 @@ body {
 
 .stat-change.negative {
     color: #FF3B30;
+}
+
+.stat-graph {
+    margin-top: auto;
+    height: 40px;
+    width: 100%;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }

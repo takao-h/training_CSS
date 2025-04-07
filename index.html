@@ -7,6 +7,7 @@
     <title>Product Analytics Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -62,29 +63,123 @@
 
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <h3>Avg. Monthly Revenue</h3>
-                        <div class="stat-value">$4,250.25</div>
-                        <div class="stat-change positive">+2.15% From last month</div>
+                        <div class="stat-header">
+                            <h3>Avg. Monthly Revenue</h3>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-info">
+                                <div class="stat-value"><span class="main-value">$4,250</span><span
+                                        class="decimal">.25</span></div>
+                                <div class="stat-change positive">+2.15% From last month</div>
+                            </div>
+                            <div class="stat-graph">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                     <div class="stat-card">
-                        <h3>Avg. Monthly Sales</h3>
-                        <div class="stat-value">1,230</div>
-                        <div class="stat-change positive">+4.12% From last month</div>
+                        <div class="stat-header">
+                            <h3>Avg. Monthly Sales</h3>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-info">
+                                <div class="stat-value">1,230</div>
+                                <div class="stat-change positive">+4.12% From last month</div>
+                            </div>
+                            <div class="stat-graph">
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                     <div class="stat-card">
-                        <h3>Avg. Favorites</h3>
-                        <div class="stat-value">13,180</div>
-                        <div class="stat-change negative">-1.20% From last month</div>
+                        <div class="stat-header">
+                            <h3>Avg. Favorites</h3>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-info">
+                                <div class="stat-value">13,180</div>
+                                <div class="stat-change negative">-1.20% From last month</div>
+                            </div>
+                            <div class="stat-graph">
+                                <canvas id="favoritesChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                     <div class="stat-card">
-                        <h3>Search Volume</h3>
-                        <div class="stat-value">2,440</div>
-                        <div class="stat-change positive">+2.15% From last month</div>
+                        <div class="stat-header">
+                            <h3>Search Volume</h3>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-info">
+                                <div class="stat-value">2,440</div>
+                                <div class="stat-change positive">+2.15% From last month</div>
+                            </div>
+                            <div class="stat-graph">
+                                <canvas id="searchChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
+
+    <script>
+        // グラフの設定と描画
+        function createLineChart(canvasId, data, color) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+
+            return new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        data: data,
+                        borderColor: color,
+                        backgroundColor: color + '20', // 20は透明度
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: false
+                        },
+                        y: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // 各グラフのダミーデータ
+        const revenueData = [3800, 4200, 3900, 4300, 4100, 3700, 4000, 4200, 3900, 4400, 4200, 4250];
+        const salesData = [1000, 1150, 1050, 1200, 1100, 1020, 1150, 1210, 1180, 1220, 1200, 1230];
+        const favoritesData = [13500, 13400, 13450, 13300, 13250, 13200, 13150, 13100, 13180, 13120, 13150, 13180];
+        const searchData = [2100, 2200, 2150, 2300, 2250, 2280, 2350, 2400, 2350, 2380, 2420, 2440];
+
+        // グラフを初期化
+        document.addEventListener('DOMContentLoaded', function () {
+            createLineChart('revenueChart', revenueData, '#4299e1');
+            createLineChart('salesChart', salesData, '#4299e1');
+            createLineChart('favoritesChart', favoritesData, '#e53e3e');
+            createLineChart('searchChart', searchData, '#4299e1');
+        });
+    </script>
 </body>
 
 </html>
