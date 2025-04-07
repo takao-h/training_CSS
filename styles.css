@@ -255,3 +255,272 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* 製品テーブルのスタイル */
+.product-table-section {
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.table-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    padding: 8px 15px;
+    border: none;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+}
+
+.tab.active {
+    font-weight: 600;
+    color: #333;
+    background-color: #f0f0f5;
+}
+
+.table-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-action {
+    background-color: #f5f5f7;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.action-btn .material-icons {
+    font-size: 18px;
+}
+
+.product-table {
+    padding: 0 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    text-align: left;
+    padding: 15px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+}
+
+th:first-child,
+td:first-child {
+    width: 40px;
+    text-align: center;
+}
+
+tbody tr {
+    border-bottom: 1px solid #f5f5f7;
+}
+
+td {
+    padding: 15px 10px;
+    font-size: 14px;
+}
+
+.product-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-cell img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.product-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+.shop-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.shop-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+
+.score-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.score-bar {
+    flex: 1;
+    height: 8px;
+    background-color: #f0f0f5;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100px;
+}
+
+.score-fill {
+    height: 100%;
+    background-color: #4299e1;
+    border-radius: 4px;
+}
+
+/* チェックボックスのスタイル */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* ページネーションのスタイル */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid #f5f5f7;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #666;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pagination-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination-btn.active {
+    background-color: #f0f0f5;
+    font-weight: bold;
+}
+
+.pagination-ellipsis {
+    padding: 0 5px;
+}
+
+.pagination-settings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .table-actions {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-table {
+        overflow-x: scroll;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
